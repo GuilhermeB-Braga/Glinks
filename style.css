@@ -11,7 +11,7 @@
     font-family: "Poppins", sans-serif;
     --background: #ebebeb;
     --surface-bg: rgb(3, 200, 0);
-    --surface-bg-hover: rgb(3, 85, 2);
+    --surface-bg-hover: rgb(5, 136, 0);
     --font-color: #000000;
 }
 
@@ -76,9 +76,9 @@ main{
 #switch {
     background: #a8a8a8;
     border-radius: 2rem;
-    width: 10rem;
-    height: 5rem;
-    border-radius: 10rem;
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 5rem;
     position: relative;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -87,11 +87,11 @@ main{
 #switch::before {
     position: absolute;
     content: "";
-    margin: .25rem;
+    margin: .125rem;
     background: #fff;
-    width: 4.5rem;
-    height: 4.5rem;
-    border-radius: 10rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 5rem;
     transition: all 0.3s ease-in-out;
 }
 
@@ -100,7 +100,7 @@ main{
 }
 
 #checkbox:checked + #switch::before {
-    transform: translateX(5rem);
+    transform: translateX(2.5rem);
 }
 
 #checkbox {
