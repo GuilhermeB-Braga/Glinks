@@ -9,26 +9,42 @@
 :root{
     font-size: 62.5%;
     font-family: "Poppins", sans-serif;
+    --background: #ebebeb;
+    --surface-bg: rgb(3, 200, 0);
+    --surface-bg-hover: rgb(3, 85, 2);
+    --font-color: #000000;
+}
+
+.dark-mode {
     --background: #131313;
     --surface-bg: rgb(3, 200, 0);
     --surface-bg-hover: rgb(3, 85, 2);
-    --white: #fff;
+    --font-color: #fff;
 }
 
 body{
     font-size: 1.6rem;
     background: var(--background) no-repeat;
     background-size: cover;
-    color: var(--white);
+    color: var(--font-color);
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap:1.5rem;
+    transition: all 0.2s ease-in-out;
 }
 
+
 a{
-    color: var(--white);
+    color: var(--font-color);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #profile{
@@ -50,11 +66,46 @@ a{
     margin-top: 1rem;
     font-size: 2rem;
 }
-main{
+
+.container-btn{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
+
+#switch {
+    background: #a8a8a8;
+    border-radius: 2rem;
+    width: 10rem;
+    height: 5rem;
+    border-radius: 10rem;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+#switch::before {
+    position: absolute;
+    content: "";
+    margin: .25rem;
+    background: #fff;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 10rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#checkbox:checked + #switch{
+    background-color: rgb(88, 88, 88);
+}
+
+#checkbox:checked + #switch::before {
+    transform: translateX(5rem);
+}
+
+#checkbox {
+    display: none;
+}
+
 #links{
     font-size: 1.6rem;
     color: var(--white);
@@ -105,7 +156,7 @@ main{
 }
 
 ion-icon{
-    color:rgb(255, 255, 255);
+    color:var(--font-color);
     width: 2.5rem;
     height: 2.5rem;
     transition: 0.2s;
@@ -118,13 +169,11 @@ ion-icon:hover{
 
 footer{
     text-align: center;
-    margin-top: 1.5rem;
     margin-bottom: 3rem;
 }
 
 footer a{
     color: var(--surface-bg);
-    font-weight: 500;
     transition: 0.2s;
 }
 
